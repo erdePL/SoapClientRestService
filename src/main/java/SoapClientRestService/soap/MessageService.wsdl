@@ -1,0 +1,258 @@
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://webService/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="MessageServiceImplService" targetNamespace="http://webService/">
+  <wsdl:types>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://webService/" elementFormDefault="unqualified" targetNamespace="http://webService/" version="1.0">
+
+  <xs:element name="addMessage" type="tns:addMessage"/>
+
+  <xs:element name="addMessageResponse" type="tns:addMessageResponse"/>
+
+  <xs:element name="getAllMessages" type="tns:getAllMessages"/>
+
+  <xs:element name="getAllMessagesResponse" type="tns:getAllMessagesResponse"/>
+
+  <xs:element name="getMessage" type="tns:getMessage"/>
+
+  <xs:element name="getMessageResponse" type="tns:getMessageResponse"/>
+
+  <xs:element name="message" type="tns:message"/>
+
+  <xs:element name="removeAllMessages" type="tns:removeAllMessages"/>
+
+  <xs:element name="removeAllMessagesResponse" type="tns:removeAllMessagesResponse"/>
+
+  <xs:element name="removeMessage" type="tns:removeMessage"/>
+
+  <xs:element name="removeMessageResponse" type="tns:removeMessageResponse"/>
+
+  <xs:element name="updateMessage" type="tns:updateMessage"/>
+
+  <xs:element name="updateMessageResponse" type="tns:updateMessageResponse"/>
+
+  <xs:complexType name="removeAllMessages">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="removeAllMessagesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getAllMessages">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="getAllMessagesResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:message"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="message">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="author" type="xs:string"/>
+      <xs:element minOccurs="0" name="creationDate" type="xs:dateTime"/>
+      <xs:element name="id" type="xs:long"/>
+      <xs:element minOccurs="0" name="messageContent" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="removeMessage">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="removeMessageResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:message"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="addMessage">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:message"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="addMessageResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:message"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="updateMessage">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:message"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="updateMessageResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:message"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getMessage">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getMessageResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:message"/>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="removeAllMessages">
+    <wsdl:part element="tns:removeAllMessages" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAllMessagesResponse">
+    <wsdl:part element="tns:getAllMessagesResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateMessageResponse">
+    <wsdl:part element="tns:updateMessageResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAllMessages">
+    <wsdl:part element="tns:getAllMessages" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="removeAllMessagesResponse">
+    <wsdl:part element="tns:removeAllMessagesResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addMessageResponse">
+    <wsdl:part element="tns:addMessageResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="removeMessage">
+    <wsdl:part element="tns:removeMessage" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getMessageResponse">
+    <wsdl:part element="tns:getMessageResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="removeMessageResponse">
+    <wsdl:part element="tns:removeMessageResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addMessage">
+    <wsdl:part element="tns:addMessage" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateMessage">
+    <wsdl:part element="tns:updateMessage" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getMessage">
+    <wsdl:part element="tns:getMessage" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="MessageService">
+    <wsdl:operation name="removeAllMessages">
+      <wsdl:input message="tns:removeAllMessages" name="removeAllMessages">
+    </wsdl:input>
+      <wsdl:output message="tns:removeAllMessagesResponse" name="removeAllMessagesResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllMessages">
+      <wsdl:input message="tns:getAllMessages" name="getAllMessages">
+    </wsdl:input>
+      <wsdl:output message="tns:getAllMessagesResponse" name="getAllMessagesResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="removeMessage">
+      <wsdl:input message="tns:removeMessage" name="removeMessage">
+    </wsdl:input>
+      <wsdl:output message="tns:removeMessageResponse" name="removeMessageResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addMessage">
+      <wsdl:input message="tns:addMessage" name="addMessage">
+    </wsdl:input>
+      <wsdl:output message="tns:addMessageResponse" name="addMessageResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateMessage">
+      <wsdl:input message="tns:updateMessage" name="updateMessage">
+    </wsdl:input>
+      <wsdl:output message="tns:updateMessageResponse" name="updateMessageResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMessage">
+      <wsdl:input message="tns:getMessage" name="getMessage">
+    </wsdl:input>
+      <wsdl:output message="tns:getMessageResponse" name="getMessageResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="MessageServiceImplServiceSoapBinding" type="tns:MessageService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="removeAllMessages">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="removeAllMessages">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="removeAllMessagesResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllMessages">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getAllMessages">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getAllMessagesResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="removeMessage">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="removeMessage">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="removeMessageResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addMessage">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="addMessage">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addMessageResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateMessage">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="updateMessage">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="updateMessageResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMessage">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getMessage">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getMessageResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="MessageServiceImplService">
+    <wsdl:port binding="tns:MessageServiceImplServiceSoapBinding" name="MessageServiceImplPort">
+      <soap:address location="http://desktop-3qrni9m:11080/SoapMessageService-1.0-SNAPSHOT/MessageService"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
